@@ -1,39 +1,29 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Created variables to represent the different possible character sets
-
-
+// Variables:
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// console.log(upper.length)
-
 var lower = upper.toLowerCase();
-// console.log(lower);
-// console.log(lower.length);
-
-// Not sure if I need this number set since I'm using randNum which doesn't include this var
-var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-// console.log(num)
-
+var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var symb = ['@', '%', '+', '', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-// console.log(symb.length);
 
-// Need to create randomizer for each variable
-
-// This randomizes the set but only provides one random character so I'll have to add different character types chosen by user and run the collective set times the number of characters selected for the pw. 
+// Randomized Variables:
 var randUpper = upper.charAt(Math.floor(Math.random() * upper.length));
-console.log(randUpper);
-
 var randLower = lower.charAt(Math.floor(Math.random() * lower.length));
-console.log(randLower);
-
 var randNum = Math.floor(Math.random() * 10);
-console.log(randNum);
-
 var randSymb = symb[Math.floor(Math.random() * symb.length)]
-console.log(randSymb);
 
 
+// User selected character types to be included in pw:
+var pwCharLen;
+var includeUpper;
+var includeLower;
+var includeNumber;
+var includeSymbol;
+var selected;
+
+
+//--------------------------------------------------------------------------------------------
 // Set variables into key-value pairs. Not sure if this is applicalbe though
 var randChar = {
   lower: randLower,
@@ -41,6 +31,30 @@ var randChar = {
   number: randNum,
   symbol: randSymb
 };
+
+//--------------------------------------------------------------------------------------------
+
+// Choose pw length and alert if not in range
+pwCharLen = prompt("How many characters would you like your password to contain?");
+if (pwCharLen > 128 || pwCharLen < 8) {
+  alert("Error! Password length must be 8 - 128 characters.");
+
+  // If pw length selection is in range, continue to character type selecton
+} else {
+  includeUpper = confirm("Click OK if you'd like to include uppercase letters.");
+  includeLower = confirm("Click OK if you'd like to inlcude lowercase letters");
+  includeNumber = confirm("Click OK if you'd like to include numbers.");
+  includeSymbol = confirm("Click OK if you'd like to include special characters.");
+};
+
+// If user didn't select any character types, alert goes off
+selected = (includeUpper && includeLower && includeNumber && includeSymbol);
+
+if (!selected) {
+  alert("Error! Must include at least one character type.")
+};
+
+
 
 
 // var select = document.getElementById('selection');
@@ -50,38 +64,12 @@ var randChar = {
 // var selectNumber = document.getElementById('num');
 // var selectSymbol = document.getElementById('symb');
 
-// Basic outline for function and alerts:
-var pwChar;
-// Choose pw length and alert if not in range
-prompt("How many characters would you like your password to contain?");
-if (pwChar > 128 || pwChar < 8) {
-  alert("Error! Password length must be 8 - 128 characters.");
-}
-// Why is this alert not going off? ^
-
-// Choose pw character types 
-confirm("Click OK if you'd like to include uppercase letters.");
-confirm("Click OK if you'd like to inlcude lowercase letters");
-confirm("Click OK if you'd like to include numbers.");
-confirm("Click OK if you'd like to include special characters.");
-
-if (!(selectUpper && selectLower && selctNumber && selectSymbol)) {
-  alert("Error! Must include at least one character type.")
-
-}
-
-
-
-
-
-
 
 // Try to write a fucntion to randomize total selection based on user input:
 // function randomizer(randOne, randTwo, randThree, randFour) {
 //   Math.floor(Math.random())
 
 // }
-// console.log(Math.floor(Math.random(num)))
 // Need to create randomizer for variable combinations based on user choice
 
 
