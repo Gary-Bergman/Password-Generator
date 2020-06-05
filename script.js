@@ -34,6 +34,23 @@ var randSymb = symb[Math.floor(Math.random() * symb.length)]
 console.log(randSymb);
 
 
+// Set variables into key-value pairs. Not sure if this is applicalbe though
+var randChar = {
+  lower: randLower,
+  upper: randUpper,
+  number: randNum,
+  symbol: randSymb
+};
+
+
+// var select = document.getElementById('selection');
+// var selectLength = document.getElementById('length');
+// var selectUpper = document.getElementById('upper');
+// var selectLower = document.getElementById('lower');
+// var selectNumber = document.getElementById('num');
+// var selectSymbol = document.getElementById('symb');
+
+
 
 
 
