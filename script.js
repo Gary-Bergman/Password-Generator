@@ -11,6 +11,7 @@ var lower = upper.toLowerCase();
 // console.log(lower);
 // console.log(lower.length);
 
+// Not sure if I need this number set since I'm using randNum which doesn't include this var
 var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 // console.log(num)
 
@@ -19,6 +20,31 @@ var symb = ['@', '%', '+', '', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')',
 
 // Need to create randomizer for each variable
 
+// This randomizes the set but only provides one random character so I'll have to add different character types chosen by user and run the collective set times the number of characters selected for the pw. 
+var randUpper = upper.charAt(Math.floor(Math.random() * upper.length));
+console.log(randUpper);
+
+var randLower = lower.charAt(Math.floor(Math.random() * lower.length));
+console.log(randLower);
+
+var randNum = Math.floor(Math.random() * 10);
+console.log(randNum);
+
+var randSymb = symb[Math.floor(Math.random() * symb.length)]
+console.log(randSymb);
+
+
+
+
+
+
+
+// Try to write a fucntion to randomize total selection based on user input:
+// function randomizer(randOne, randTwo, randThree, randFour) {
+//   Math.floor(Math.random())
+
+// }
+// console.log(Math.floor(Math.random(num)))
 // Need to create randomizer for variable combinations based on user choice
 
 
@@ -26,19 +52,19 @@ var symb = ['@', '%', '+', '', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')',
 
 // Need to create functionality upon clicking button. 
 // Need to prompt user for length: 8-128 - prompt user to choose w/in this range if selection out of range case for to low, case for too high
-prompt("How many characters would you like your password to contain?");
-alert("Error! Password length must be at least 8 characters.");
-alert("Error! Password length cannot exceed 128 characters.");
-// Need to prompt user for special characters (symb)
-alert("Click OK if you'd like to include special characters.");
-// Need to prompt user for numeric
-alert("Click OK if you'd like to include numbers.");
-// Need to prompt user for lower
-alert("Click OK if you'd like to inlcude lowercase letters");
-// Need to prompt user for upper
-alert("Click OK if you'd like to include uppercase letters.");
-// Need to have user include at least one - prompt user to choose if none selected
-alert("Error! Must include at least one character type.")
+// prompt("How many characters would you like your password to contain?");
+// alert("Error! Password length must be at least 8 characters.");
+// alert("Error! Password length cannot exceed 128 characters.");
+// // Need to prompt user for special characters (symb)
+// alert("Click OK if you'd like to include special characters.");
+// // Need to prompt user for numeric
+// alert("Click OK if you'd like to include numbers.");
+// // Need to prompt user for lower
+// alert("Click OK if you'd like to inlcude lowercase letters");
+// // Need to prompt user for upper
+// alert("Click OK if you'd like to include uppercase letters.");
+// // Need to have user include at least one - prompt user to choose if none selected
+// alert("Error! Must include at least one character type.")
 
 // Need to generate pw derived from user choices
 // Need to test all possibilities
