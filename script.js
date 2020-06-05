@@ -21,11 +21,12 @@ var includeLower;
 var includeNumber;
 var includeSymbol;
 var selected;
+var include = [];
 
 
 //--------------------------------------------------------------------------------------------
 // Set variables into key-value pairs. Not sure if this is applicalbe though
-var randChar = {
+var charSelect = {
   lower: randLower,
   upper: randUpper,
   number: randNum,
@@ -48,11 +49,31 @@ if (pwCharLen > 128 || pwCharLen < 8) {
 };
 
 // If user didn't select any character types, alert goes off
-selected = (includeUpper && includeLower && includeNumber && includeSymbol);
+selected = includeUpper && includeLower && includeNumber && includeSymbol;
 
 if (!selected) {
   alert("Error! Must include at least one character type.")
 };
+
+// If user selects character type, add that randomized character type value to charSelect
+if (includeUpper) {
+  include.push(charSelect.upper);
+};
+
+if (includeLower) {
+  include.push(charSelect.lower);
+};
+
+if (includeNumber) {
+  include.push(charSelect.number);
+};
+
+if (includeSymbol) {
+  include.push(charSelect.symbol);
+};
+
+
+console.log(include)
 
 
 
@@ -65,20 +86,12 @@ if (!selected) {
 // var selectSymbol = document.getElementById('symb');
 
 
-// Try to write a fucntion to randomize total selection based on user input:
-// function randomizer(randOne, randTwo, randThree, randFour) {
-//   Math.floor(Math.random())
-
-// }
-// Need to create randomizer for variable combinations based on user choice
 
 
 
 
-// Need to create functionality upon clicking button. 
 
-// Need to have user include at least one - prompt user to choose if none selected
-// alert("Error! Must include at least one character type.")
+
 
 // Need to generate pw derived from user choices
 // Need to test all possibilities
