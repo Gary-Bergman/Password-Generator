@@ -1,31 +1,33 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Variables:
-var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// Variables for character type:
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var lower = upper.toLowerCase();
-var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var symb = ['@', '%', '+', '', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+console.log(lower)
+var num = '0123456789'
+var symb = '@%+"/\'!#$^?:,)(}{][~-_.';
 
-// Randomized Variables:
+
+// Randomized character type variables:
 var randUpper = upper.charAt(Math.floor(Math.random() * upper.length));
 var randLower = lower.charAt(Math.floor(Math.random() * lower.length));
-var randNum = Math.floor(Math.random() * 10);
-var randSymb = symb[Math.floor(Math.random() * symb.length)]
+var randNum = num.charAt(Math.floor(Math.random() * num.length));
+var randSymb = symb.charAt[Math.floor(Math.random() * symb.length)]
 
 
-// User selected character types to be included in pw:
+// User selected character types to be included in password:
 var pwCharLen;
 var includeUpper;
 var includeLower;
 var includeNumber;
 var includeSymbol;
 var selected;
-var include = [];
+var include;
 
 
-//--------------------------------------------------------------------------------------------
-// Set variables into key-value pairs. Not sure if this is applicalbe though
+//----------------------------------------------------------------------------
+// Character type variables into key-value pairs
 var charSelect = {
   lower: randLower,
   upper: randUpper,
@@ -33,7 +35,7 @@ var charSelect = {
   symbol: randSymb
 };
 
-//--------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 
 // Choose pw length and alert if not in range
 pwCharLen = prompt("How many characters would you like your password to contain?");
@@ -56,24 +58,48 @@ if (!selected) {
 };
 
 // If user selects character type, add that randomized character type value to charSelect
-if (includeUpper) {
-  include.push(charSelect.upper);
-};
+// if (includeUpper) {
+//   include.push(charSelect.upper);
+// };
 
-if (includeLower) {
-  include.push(charSelect.lower);
-};
+// if (includeLower) {
+//   include.push(charSelect.lower);
+// };
 
-if (includeNumber) {
-  include.push(charSelect.number);
-};
+// if (includeNumber) {
+//   include.push(charSelect.number);
+// };
 
-if (includeSymbol) {
-  include.push(charSelect.symbol);
-};
+// if (includeSymbol) {
+//   include.push(charSelect.symbol);
+// };
 
 
-console.log(include)
+// Used Fisheer-Yates Algorithm to shuffle include array
+
+// var arrayShuffle = function (include) {
+//   let newPos,
+//     temp;
+// }
+// for (let i = include.length - 1; i > 0; i--) {
+//   const j = Math.floor(Math.random() * i)
+//   const temp = inlcude[i]
+//   include[i] = include[j]
+//   inlcude[j] = temp
+// }
+
+
+console.log()
+
+// var pw;
+
+// if (pwCharLen) {
+//   for (i = 0; i < pwCharLen; i++) {
+//     pw += include[Math.floor(Math.random() * include.length)]
+//   }
+// }
+
+// console.log(pw)
 
 
 
