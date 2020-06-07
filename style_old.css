@@ -12,17 +12,9 @@ body,
   padding: 0;
 }
 
-.nav {
-  width: 100%;
-}
-
-.myName:hover {
-  font-weight: bold;
-}
-
 body {
   font-family: sans-serif;
-  background-image: url(Assets/background-port.jpg);
+  background-color: #f9fbfd;
 }
 
 .wrapper {
@@ -33,12 +25,9 @@ body {
 
 header {
   text-align: center;
+  padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
-}
-
-h2 {
-  text-align: center;
 }
 
 .card {
@@ -53,20 +42,11 @@ h2 {
   padding: 30px 40px;
 }
 
-#card-border {
-  border: 7px solid #446E9B;
-
-}
-
-.card-header {
-  background-color: hsl(0, 0%, 100%);
-}
-
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
-  background: none
+  background: #e7e9eb;
   height: 2px;
 }
 
@@ -76,14 +56,13 @@ h2 {
 
 .card-footer {
   text-align: center;
-  background-color: hsl(0, 0%, 100%);
 }
 
 .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: none;
+  background: #e7e9eb;
   height: 2px;
 }
 
@@ -95,7 +74,7 @@ h2 {
 
 .btn {
   border: none;
-  background-color: #446E9B;
+  background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -107,15 +86,6 @@ h2 {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #6ab5f6;
-
-}
-
-#generate {
-  color: #ffffff;
 }
 
 button[disabled] {
@@ -146,10 +116,6 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-}
-
-.footerIcons {
-  font-size: 40px;
 }
 
 @media (max-width: 690px) {
