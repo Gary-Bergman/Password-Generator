@@ -8,7 +8,7 @@ var num = "0123456789";
 var symb = "@%+\\/\'!#$^?:,)(}{][~-_.";
 
 
-// This function will execute when called by writePassword function.
+// This function will execute when called by writePassword function below.
 function generatePassword() {
   //This prompt asks the user what password length they'd like
   var pwLen = prompt("How many characters would you like your password to contain?");
@@ -22,7 +22,7 @@ function generatePassword() {
 
     // If the user inputs an accepetable number of characters, these if statements will add the selected character types to the string in the variable "include".
     var includeUpper = confirm("Click OK if you'd like to include uppercase letters.");
- 
+
     if (includeUpper) {
       include += upper;
     }
@@ -57,18 +57,30 @@ function generatePassword() {
     // This return sets a value to the variable password in the writePassword function below.
     return returnPw;
   }
-};
+}
 
 
 // Write password to the #password input
 function writePassword() {
-  // The variable "password" equals the return value (returnPw) of the function generatePassword.
+  // The variable "password" equals the return value (returnPw) of the function generatePassword above.
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // added if statement so my textbox reads error message instead of undefined when the initial prompt is cancelled.
   passwordText.value = password;
-
-};
+  if (!password) {
+    passwordText.value = "Error! Must include at least one character type.";
+  }
+}
 
 // This executes the writePassword function when the user clicks the "Generate Password" button.
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+// figure out gitignore in office hours if I ignore my old file after the fact will it ignore my commit history too?
+
+// Add another function for the equal chance of any character type
+
+// Try using a switch statement for that new function
