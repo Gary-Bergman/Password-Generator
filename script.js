@@ -2,12 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 // Variables for character type:
-var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lower = upper.toLowerCase();
-var num = '0123456789'
+var num = '0123456789';
 var symb = "@%+\\/\'!#$^?:,)(}{][~-_.";
-
-var include = ""
 // var includeUpper;
 // var includeLower;
 // var includeNumber;
@@ -20,6 +18,8 @@ var include = ""
 function generatePassword() {
   //This prompt asks the user what password length they'd like
   var pwLen = prompt("How many characters would you like your password to contain?");
+  // I put these variables into local scope so that they reset each time the user generates a new password (clicks the generate password button).
+  var include = "";
   var returnPw = "";
 
   if (pwLen > 128 || pwLen < 8) {
@@ -55,11 +55,11 @@ function generatePassword() {
     }
 
     for (var i = 0; i < pwLen; i++) {
-      returnPw = 
+      returnPw += include.charAt(Math.floor(Math.random() * include.length))
     }
-    
 
 
+    // This return sets a value to the variable password in the writePassword function below.
     return returnPw;
 
 
@@ -151,7 +151,7 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-
+  // The variable password equals the return value (returnPw) of the function generatePassword.
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
