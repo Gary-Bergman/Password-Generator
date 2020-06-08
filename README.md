@@ -1,7 +1,5 @@
 # Password-Generator
-
-
-<img src="Assets/Images/password_Generator.png" width: "100" />
+![](Assets/Images/password_Generator.png)
 
 This password generator randomizes characters to help you create a secure password. I created this using javascript and predesigned html and css files which I updated and added styling and a new color-scheme through bootstrap. 
 
