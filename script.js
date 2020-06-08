@@ -60,7 +60,7 @@ function generatePassword() {
 }
 
 
-// Write password to the #password input
+// Executed by click
 function writePassword() {
   // The variable "password" equals the return value (returnPw) of the function generatePassword above.
   var password = generatePassword();
@@ -75,12 +75,3 @@ function writePassword() {
 
 // This executes the writePassword function when the user clicks the "Generate Password" button.
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-// figure out gitignore in office hours if I ignore my old file after the fact will it ignore my commit history too?
-
-// Add another function for the equal chance of any character type
-
-// Try using a switch statement for that new function
